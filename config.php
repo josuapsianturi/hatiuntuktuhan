@@ -6,7 +6,7 @@ return [
     'baseUrl' => '',
     'production' => false,
     'siteName' => 'Hati Untuk Tuhan',
-    'siteDescription' => 'Beautiful docs powered by Jigsaw',
+    'siteDescription' => '',
 
     // Algolia DocSearch credentials
     'docsearchApiKey' => env('DOCSEARCH_KEY'),

@@ -16,7 +16,7 @@ As with all Jigsaw sites, configuration settings can be found in `config.php`; y
 ```php
 // config.php
 return [
-    'baseUrl' => 'https://my-awesome-jigsaw-site.com/',
+    'baseUrl' => 'https://hatiuntuktuhan.com/',
     'production' => false,
     'siteName' => 'Hati Untuk Tuhan',
     'siteDescription' => 'Give your documentation a boost with Jigsaw.',
