@@ -12,28 +12,28 @@
             </p>
         </div>
 
-        <img src="/assets/img/logo.png" alt="{{ $page->siteName }} large logo" class="mx-auto mb-6 lg:mb-0 ">
+        <img src="/assets/img/logo.png" alt="{{ $page->siteName }} large logo" class="mx-auto mb-6 hidden md:block lg:mb-0 w-80">
     </div>
 
     <hr class="block my-8 border lg:hidden">
 
-    <div class="md:flex -mx-2 -mx-4">
-        <a href="https://www.instagram.com/hatiuntuktuhan/" class="mb-8 mx-3 px-2 md:w-1/3">
-            <img src="/assets/img/icon-window.svg" class="h-12 w-12" alt="instagram icon">
+    <div class="flex">
+        <a href="https://www.instagram.com/hatiuntuktuhan/" class="mb-8 mx-auto px-2 md:w-1/3">
+            <img src="/assets/img/icon-window.svg" class="w-8 h-8 md:h-12 md:w-12 mx-auto md:mx-0" alt="instagram icon">
 
-            <h3 id="instagram" class="text-2xl text-blue-900 mb-0">Instagram</h3>
+            <h3 id="instagram" class="text-lg md:text-2xl text-blue-900 mb-0 underline">Instagram</h3>
         </a>
 
-        <a href="https://www.youtube.com/@hatiuntuktuhan/videos" class="mb-8 mx-3 px-2 md:w-1/3">
-            <img src="/assets/img/icon-terminal.svg" class="h-12 w-12" alt="youtube icon">
+        <a href="https://www.youtube.com/@hatiuntuktuhan/videos" class="mx-auto mb-8 px-2 md:w-1/3">
+            <img src="/assets/img/icon-terminal.svg" class=" h-8 w-8 md:h-12 md:w-12" alt="youtube icon">
 
-            <h3 id="youtube" class="text-2xl text-blue-900 mb-0">YouTube</h3>
+            <h3 id="youtube" class="text-lg md:text-2xl text-blue-900 mb-0 underline">YouTube</h3>
         </a>
 
-        <a href="https://www.tiktok.com/@hatiuntuktuhan" class="mx-3 px-2 md:w-1/3 text-gray-700">
-            <img src="/assets/img/icon-stack.svg" class="h-12 w-12" alt="stack icon">
+        <a href="https://www.tiktok.com/@hatiuntuktuhan" class="mx-auto px-2 md:w-1/3 text-gray-700">
+            <img src="/assets/img/icon-stack.svg" class="w-8 h-8 md:h-12 md:w-12" alt="stack icon">
 
-            <h3 id="tiktok" class="text-2xl text-blue-900 mb-0">TikTok</h3>
+            <h3 id="tiktok" class="text-lg md:text-2xl text-blue-900 mb-0 underline">TikTok</h3>
         </a>
     </div>
 </section>
