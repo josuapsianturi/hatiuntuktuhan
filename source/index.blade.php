@@ -7,8 +7,14 @@
             <h1 id="intro-template">{{ $page->siteName }}</h1>
 
             <p class="text-2xl"> 
-                dan kamu akan mengetahui kebenaran, dan kebenaran itu akan memerdekakan kamu 
-                ( Yoh 8:32 ) 
+                ❤️‍🔥 Membuka mata Rohani pada Kasih & Kuasa Yesus
+                <br>💫 Update Konten Pertumbuhan Rohani Setiap Hari
+                <br>🎤 Rangkuman Ibadah
+            </p>
+
+            <p class="text-lg">
+                dan kamu akan mengetahui kebenaran, dan kebenaran itu akan memerdekakan kamu
+                ( Yoh 8:32 )
             </p>
         </div>
 
@@ -25,7 +31,7 @@
         </a>
 
         <a href="https://www.youtube.com/@hatiuntuktuhan/videos" target="_blank" class="mx-auto mb-8 px-2 md:w-1/3">
-            <img src="/assets/img/icon-terminal.svg" class=" h-8 w-8 md:h-12 md:w-12" alt="youtube icon">
+            <img src="/assets/img/icon-terminal.svg" class=" h-8 w-8 md:h-12 md:w-12 mx-auto md:mx-0" alt="youtube icon">
 
             <h3 id="youtube" class="text-lg md:text-2xl text-blue-900 mb-0 underline">YouTube</h3>
         </a>
