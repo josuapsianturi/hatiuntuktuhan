@@ -1,4 +1,5 @@
-// src/app/not-found.tsx
+import Link from 'next/link'
+
 export default function NotFound() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center bg-white text-gray-800">
@@ -7,12 +8,12 @@ export default function NotFound() {
             <p className="text-gray-600 mb-6">
                 Maaf, halaman yang kamu cari belum tersedia atau sedang dalam proses pengembangan.
             </p>
-            <a
+            <Link
                 href="/"
                 className="inline-block bg-yellow-400 hover:bg-yellow-500 text-white font-semibold px-6 py-2 rounded transition"
             >
                 Kembali ke Beranda
-            </a>
+            </Link>
         </div>
     );
 }

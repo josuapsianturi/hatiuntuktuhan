@@ -1,13 +1,9 @@
 // src/app/page.tsx
-import Link from "next/link";
-import { Play, Heart, BookOpen, PlayCircle, Instagram } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import ScriptureSlider from "@/components/scripture-slider";
 import DailyVerse from "@/components/daily-verse";
-import PrayerForm from "@/components/prayer-form";
 import Image from "next/image";
-import NewsletterForm from "@/components/newsletter-form";
 
 export default function HomePage() {
   return (

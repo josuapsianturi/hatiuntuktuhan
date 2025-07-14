@@ -2,7 +2,6 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { icons } from "lucide-react";
 
 export const metadata = {
   title: "Hati untuk Tuhan",

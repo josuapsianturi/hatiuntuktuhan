@@ -72,7 +72,7 @@ export default function ScriptureSlider() {
                                     <div className={`bg-gradient-to-br ${verse.gradient} rounded-2xl p-8 text-center border ${verse.border}`}>
                                         <Quote className={`${verse.iconColor} h-8 w-8 mx-auto mb-4`} />
                                         <p className="text-xl md:text-2xl font-medium text-gray-800 mb-6 leading-relaxed">
-                                            "{verse.text}"
+                                            &ldquo;{verse.text}&rdquo;
                                         </p>
                                         <p className={`${verse.refColor} font-semibold`}>{verse.reference}</p>
                                     </div>

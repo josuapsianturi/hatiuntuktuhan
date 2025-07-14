@@ -61,9 +61,11 @@ export default function DailyVerse() {
 
                     <div className={`mb-8 transition-opacity duration-300 ${isLoading ? 'opacity-50' : 'opacity-100'}`}>
                         <p className="text-xl md:text-2xl font-medium text-gray-800 mb-4 leading-relaxed">
-                            "{currentVerse.text}"
+                            &ldquo;{currentVerse.text}&rdquo;
                         </p>
-                        <p className="text-yellow-600 font-semibold text-lg">{currentVerse.reference}</p>
+                        <p className="text-xl md:text-2xl font-medium text-gray-800 mb-4 leading-relaxed">
+                            &ldquo;{currentVerse.text}&rdquo;
+                        </p>
                     </div>
 
                     <Button
