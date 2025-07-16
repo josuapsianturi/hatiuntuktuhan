@@ -63,9 +63,6 @@ export default function DailyVerse() {
                         <p className="text-xl md:text-2xl font-medium text-gray-800 mb-4 leading-relaxed">
                             &ldquo;{currentVerse.text}&rdquo;
                         </p>
-                        <p className="text-xl md:text-2xl font-medium text-gray-800 mb-4 leading-relaxed">
-                            &ldquo;{currentVerse.text}&rdquo;
-                        </p>
                     </div>
 
                     <Button
