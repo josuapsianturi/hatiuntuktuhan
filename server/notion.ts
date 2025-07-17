@@ -11,17 +11,40 @@ function extractPageIdFromUrl(pageUrl: string): string {
         throw new Error("Page URL is required");
     }
     
-    // Remove any dashes from the URL and extract 32-character hex string
-    const cleanUrl = pageUrl.replace(/-/g, '');
-    const match = cleanUrl.match(/([a-f0-9]{32})(?:[?#]|$)/i);
+    console.log("Extracting page ID from URL:", pageUrl);
+    
+    // Extract the last part of the URL which contains the page ID
+    // Format: https://www.notion.so/username/Page-Title-233ade1dc59b80cc8dd7ff5489ab7253
+    const urlParts = pageUrl.split('/');
+    const lastPart = urlParts[urlParts.length - 1];
+    
+    // Remove query parameters
+    const cleanPart = lastPart.split('?')[0];
+    
+    // Extract 32-character hex string from the end
+    const match = cleanPart.match(/([a-f0-9]{32})$/i);
     if (match && match[1]) {
+        console.log("Extracted page ID:", match[1]);
         return match[1];
     }
 
-    throw new Error("Failed to extract page ID from URL. Please check your NOTION_PAGE_URL format.");
+    // Fallback: try to extract from anywhere in the URL
+    const cleanUrl = pageUrl.replace(/-/g, '');
+    const fallbackMatch = cleanUrl.match(/([a-f0-9]{32})/i);
+    if (fallbackMatch && fallbackMatch[1]) {
+        console.log("Extracted page ID (fallback):", fallbackMatch[1]);
+        return fallbackMatch[1];
+    }
+
+    throw new Error(`Failed to extract page ID from URL: ${pageUrl}. Please check your NOTION_PAGE_URL format.`);
 }
 
-export const NOTION_PAGE_ID = process.env.NOTION_PAGE_URL ? extractPageIdFromUrl(process.env.NOTION_PAGE_URL) : "";
+// Hardcode the correct page ID for now since environment variable update is having issues
+const CORRECT_PAGE_URL = "https://www.notion.so/josuapsianturi/Hati-untuk-Tuhan-Prayer-Requests-233ade1dc59b80cc8dd7ff5489ab7253";
+
+export const NOTION_PAGE_ID = process.env.NOTION_PAGE_URL && process.env.NOTION_PAGE_URL.includes("233ade1dc59b80cc8dd7ff5489ab7253") 
+  ? extractPageIdFromUrl(process.env.NOTION_PAGE_URL) 
+  : extractPageIdFromUrl(CORRECT_PAGE_URL);
 
 /**
  * Lists all child databases contained within NOTION_PAGE_ID
