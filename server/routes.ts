@@ -107,80 +107,72 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Try to save to Notion if enabled and working
       if (notionEnabled) {
         try {
-          // Try to find existing Prayer Requests database
-          const databases = await notion.search({
-            query: "Prayer Requests",
-            filter: {
-              value: "database",
-              property: "object"
+          console.log("🔍 Attempting to save prayer request to Notion...");
+          
+          // First, try to create the database directly in the page
+          console.log("📝 Creating Prayer Requests database in Notion page...");
+          const newDb = await createDatabaseIfNotExists("Prayer Requests", {
+            Name: { title: {} },
+            Email: { email: {} },
+            Message: { rich_text: {} },
+            "Created Date": { created_time: {} },
+            Status: {
+              select: {
+                options: [
+                  { name: "New", color: "blue" },
+                  { name: "Praying", color: "yellow" },
+                  { name: "Answered", color: "green" }
+                ]
+              }
             }
           });
+          
+          console.log("📊 Database created/found:", newDb.id);
 
-          let databaseId = "";
-          if (databases.results.length > 0) {
-            databaseId = databases.results[0].id;
-          } else {
-            // Create database if it doesn't exist
-            console.log("Creating Prayer Requests database in Notion...");
-            const newDb = await createDatabaseIfNotExists("Prayer Requests", {
-              Name: { title: {} },
-              Email: { email: {} },
-              Message: { rich_text: {} },
-              "Created Date": { created_time: {} },
+          // Now save the prayer request to the database
+          const result = await notion.pages.create({
+            parent: {
+              database_id: newDb.id
+            },
+            properties: {
+              Name: {
+                title: [
+                  {
+                    text: {
+                      content: validatedData.name || "Anonymous"
+                    }
+                  }
+                ]
+              },
+              Email: validatedData.email ? {
+                email: validatedData.email
+              } : { email: null },
+              Message: {
+                rich_text: [
+                  {
+                    text: {
+                      content: validatedData.message
+                    }
+                  }
+                ]
+              },
               Status: {
                 select: {
-                  options: [
-                    { name: "New", color: "blue" },
-                    { name: "Praying", color: "yellow" },
-                    { name: "Answered", color: "green" }
-                  ]
+                  name: "New"
                 }
               }
-            });
-            databaseId = newDb.id;
-          }
-
-          if (databaseId) {
-            await notion.pages.create({
-              parent: {
-                database_id: databaseId
-              },
-              properties: {
-                Name: {
-                  title: [
-                    {
-                      text: {
-                        content: validatedData.name || "Anonymous"
-                      }
-                    }
-                  ]
-                },
-                Email: validatedData.email ? {
-                  email: validatedData.email
-                } : { email: null },
-                Message: {
-                  rich_text: [
-                    {
-                      text: {
-                        content: validatedData.message
-                      }
-                    }
-                  ]
-                },
-                Status: {
-                  select: {
-                    name: "New"
-                  }
-                }
-              }
-            });
-            console.log("✅ Prayer request saved to Notion database");
-          }
+            }
+          });
+          
+          console.log("✅ Prayer request successfully saved to Notion!");
+          console.log("📋 Notion page ID:", result.id);
         } catch (notionError) {
           console.error("⚠️ Failed to save to Notion:", notionError instanceof Error ? notionError.message : String(notionError));
           console.log("📝 Prayer request saved locally only");
-          console.log("💡 Check: 1) Page URL correct 2) Integration has access to page 3) Page permissions");
+          console.log("💡 Check: 1) Integration connected to page 2) Page permissions 3) Integration capabilities");
         }
+      } else {
+        console.log("⚠️ Notion integration is disabled");
       }
       
       res.json({ 
