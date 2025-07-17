@@ -59,11 +59,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const randomVerse = verses[Math.floor(Math.random() * verses.length)];
       const response = await fetch(`https://bible-api.com/${randomVerse}`);
-      
+
       if (!response.ok) {
         throw new Error("Failed to fetch scripture");
       }
-      
+
       const data = await response.json();
       res.json(data);
     } catch (error) {
@@ -77,7 +77,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const verses = [
         "john+3:16",
-        "matthew+22:37", 
+        "matthew+22:37",
         "jeremiah+29:11",
         "romans+8:28",
         "philippians+4:13"
@@ -100,15 +100,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/prayer-requests", async (req, res) => {
     try {
       const validatedData = insertPrayerRequestSchema.parse(req.body);
-      
+
       // Always save to local storage first
       const prayerRequest = await storage.createPrayerRequest(validatedData);
-      
+
       // Try to save to Notion if enabled and working
       if (notionEnabled) {
         try {
           console.log("🔍 Attempting to save prayer request to Notion...");
-          
+
           // First, try to create the database directly in the page
           console.log("📝 Creating Prayer Requests database in Notion page...");
           const newDb = await createDatabaseIfNotExists("Prayer Requests", {
@@ -126,7 +126,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
               }
             }
           });
-          
+
           console.log("📊 Database created/found:", newDb.id);
 
           // Now save the prayer request to the database
@@ -163,7 +163,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
               }
             }
           });
-          
+
           console.log("✅ Prayer request successfully saved to Notion!");
           console.log("📋 Notion page ID:", result.id);
         } catch (notionError) {
@@ -174,38 +174,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
       } else {
         console.log("⚠️ Notion integration is disabled");
       }
-      
-      res.json({ 
-        success: true, 
+
+      res.json({
+        success: true,
         message: "Prayer request submitted successfully",
-        id: prayerRequest.id 
+        id: prayerRequest.id
       });
     } catch (error) {
       console.error("Error submitting prayer request:", error);
-      
+
       if (error instanceof z.ZodError) {
-        res.status(400).json({ 
+        res.status(400).json({
           error: "Invalid prayer request data",
-          details: error.errors 
+          details: error.errors
         });
       } else {
-        res.status(500).json({ 
-          error: "Failed to submit prayer request" 
+        res.status(500).json({
+          error: "Failed to submit prayer request"
         });
       }
-    }
-  });
-
-  // Get all prayer requests (admin endpoint)
-  app.get("/api/prayer-requests", async (req, res) => {
-    try {
-      const prayerRequests = await storage.getPrayerRequests();
-      res.json(prayerRequests);
-    } catch (error) {
-      console.error("Error fetching prayer requests:", error);
-      res.status(500).json({ 
-        error: "Failed to fetch prayer requests" 
-      });
     }
   });
 

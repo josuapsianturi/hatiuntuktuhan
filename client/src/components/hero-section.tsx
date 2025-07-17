@@ -58,7 +58,9 @@ export default function HeroSection() {
             
             {/* WhatsApp Button */}
             <motion.a 
-              href="#" 
+              href="https://whatsapp.com/channel/0029Vb5nv4b89indhGAwaY0s" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="group bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3"
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
@@ -69,7 +71,9 @@ export default function HeroSection() {
             
             {/* Spotify Button */}
             <motion.a 
-              href="#" 
+              href="https://open.spotify.com/playlist/3bZfjBuLVHw0aC7UPAsUyg?si=xX-fFWyOSxqnCF7Kyx2sIQ" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="group bg-green-400 hover:bg-green-500 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3"
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
