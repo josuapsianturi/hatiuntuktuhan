@@ -107,6 +107,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Try to save to Notion if enabled and working
       if (notionEnabled) {
         try {
+          // Try to find existing Prayer Requests database
           const databases = await notion.search({
             query: "Prayer Requests",
             filter: {
@@ -118,6 +119,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
           let databaseId = "";
           if (databases.results.length > 0) {
             databaseId = databases.results[0].id;
+          } else {
+            // Create database if it doesn't exist
+            console.log("Creating Prayer Requests database in Notion...");
+            const newDb = await createDatabaseIfNotExists("Prayer Requests", {
+              Name: { title: {} },
+              Email: { email: {} },
+              Message: { rich_text: {} },
+              "Created Date": { created_time: {} },
+              Status: {
+                select: {
+                  options: [
+                    { name: "New", color: "blue" },
+                    { name: "Praying", color: "yellow" },
+                    { name: "Answered", color: "green" }
+                  ]
+                }
+              }
+            });
+            databaseId = newDb.id;
           }
 
           if (databaseId) {
@@ -135,9 +155,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
                     }
                   ]
                 },
-                Email: {
-                  email: validatedData.email || null
-                },
+                Email: validatedData.email ? {
+                  email: validatedData.email
+                } : { email: null },
                 Message: {
                   rich_text: [
                     {
@@ -154,11 +174,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
                 }
               }
             });
-            console.log("✅ Prayer request saved to Notion");
+            console.log("✅ Prayer request saved to Notion database");
           }
         } catch (notionError) {
           console.error("⚠️ Failed to save to Notion:", notionError instanceof Error ? notionError.message : String(notionError));
           console.log("📝 Prayer request saved locally only");
+          console.log("💡 Check: 1) Page URL correct 2) Integration has access to page 3) Page permissions");
         }
       }
       
