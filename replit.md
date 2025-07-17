@@ -42,7 +42,14 @@ Preferred communication style: Simple, everyday language.
    - About section
    - Footer with contact information
 
-2. **404 Page** - Simple error page for undefined routes
+2. **Admin Page** (`/admin`) - Prayer request management dashboard with:
+   - List of all submitted prayer requests
+   - Details including name, email, message, and timestamp
+   - Responsive card-based layout
+   - Real-time data refresh functionality
+   - Navigation back to main website
+
+3. **404 Page** - Simple error page for undefined routes
 
 ### Major Features
 1. **Daily Scripture Display** - Rotating Bible verses with smooth transitions
@@ -65,7 +72,9 @@ Preferred communication style: Simple, everyday language.
 
 ### API Endpoints
 - `GET /api/scripture/daily` - Fetches daily Bible verse
+- `GET /api/scripture/collection` - Fetches multiple scripture verses for slider
 - `POST /api/prayer-requests` - Submits prayer request
+- `GET /api/prayer-requests` - Retrieves all prayer requests (admin)
 - Integration with external Bible API for scripture content
 
 ### External Integrations

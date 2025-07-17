@@ -103,6 +103,14 @@ export default function Footer() {
           <p className="text-sm text-gray-500">
             © 2024 Hati untuk Tuhan. Segala kemuliaan bagi Tuhan Yesus Kristus.
           </p>
+          <div className="mt-4">
+            <a 
+              href="/admin" 
+              className="text-xs text-gray-500 hover:text-gray-400 transition-colors duration-300"
+            >
+              Admin Panel
+            </a>
+          </div>
         </div>
       </div>
     </footer>

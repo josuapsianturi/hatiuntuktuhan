@@ -183,6 +183,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get all prayer requests (admin endpoint)
+  app.get("/api/prayer-requests", async (req, res) => {
+    try {
+      const prayerRequests = await storage.getPrayerRequests();
+      res.json(prayerRequests);
+    } catch (error) {
+      console.error("Error fetching prayer requests:", error);
+      res.status(500).json({ 
+        error: "Failed to fetch prayer requests" 
+      });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
