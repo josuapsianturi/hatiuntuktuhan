@@ -1,0 +1,99 @@
+Berikut ini adalah **prompt lengkap yang sudah digabung dan dirapikan** untuk kamu gunakan di Replit AI. Ini akan memberi AI semua konteks yang dibutuhkan untuk membangun website **Hati untuk Tuhan** yang indah dan fungsional:
+
+---
+
+## 🧠 Prompt Lengkap untuk Replit AI
+
+**Tujuan:**
+Buat website indah dan rohani bernama **Hati untuk Tuhan** — sebuah pelayanan digital yang membagikan video pendek tentang Injil dan Yesus Kristus melalui TikTok & Instagram.
+
+---
+
+### ✨ Visi
+
+* Membagikan kabar baik (Injil) dengan penuh kasih dan kejelasan.
+* Membangun pengalaman web yang modern, ringan, dan menginspirasi.
+* Membantu orang mengenal Yesus dan terhubung dengan komunitas rohani.
+* Menyediakan fitur harian untuk pertumbuhan iman seperti ayat harian dan permohonan doa.
+* Mendorong pengunjung untuk follow dan aktif di sosial media Hati untuk Tuhan.
+
+---
+
+### 🎨 Desain & UX
+
+* Gunakan skema warna dari logo ini: `/mnt/data/logo-hati untuk tuhan.png`
+* Gaya desain: minimalis, modern, lembut, dan penuh kedamaian.
+* Desain mobile-first dan responsif penuh.
+* Gunakan **Tailwind CSS** untuk styling.
+* Tambahkan animasi halus menggunakan **Framer Motion** atau **GSAP**.
+* Gunakan latar belakang gradasi lembut atau tekstur ringan untuk suasana tenang.
+
+---
+
+### 🧩 Struktur Halaman
+
+#### 1. Hero Section
+
+* Judul: **"Jangkau Jiwa, Nyatakan Kasih-Nya"**
+* Subjudul: *“Video pendek tentang Injil & Yesus Kristus”*
+* CTA Button:
+
+  * 🎬 *Follow on TikTok* → [https://www.tiktok.com/@hatiuntuktuhan](https://www.tiktok.com/@hatiuntuktuhan)
+  * 📷 *Follow on Instagram* → [https://www.instagram.com/hatiuntuktuhan/](https://www.instagram.com/hatiuntuktuhan/)
+  * 💬 *Join WhatsApp Channel* → (bisa diisi link channel WhatsApp kami)
+  * 🎧 *Dengarkan Spotify Playlist* → (embed playlist rohani jika ada)
+
+#### 2. Embedded Social Videos
+
+* Embed **video TikTok dengan view terbanyak** dari: [https://www.tiktok.com/@hatiuntuktuhan](https://www.tiktok.com/@hatiuntuktuhan)
+* Embed **post Instagram terbaik** dari: [https://www.instagram.com/hatiuntuktuhan/](https://www.instagram.com/hatiuntuktuhan/)
+* Tujuan: Mengajak orang langsung engage dengan konten dan follow.
+
+#### 3. Daily Scripture Slider
+
+* Fitur **ayat harian** dengan tampilan slider indah.
+* Menggunakan API Bible: [https://bible-api.com/](https://bible-api.com/)
+* Desain: ayat ditampilkan dalam kartu penuh, bisa swipe kiri/kanan.
+* Tambahkan kutipan renungan singkat opsional di bawah ayat.
+
+#### 4. Prayer Request Form
+
+* Form sederhana dengan input:
+
+  * Nama (opsional)
+  * Email (opsional)
+  * Pesan Doa
+* Setelah submit, data dikirim ke **Notion** (melalui Zapier, Make.com, atau Notion API).
+* Tampilkan pesan "Terima kasih, kami akan mendoakanmu 🙏" setelah submit.
+
+#### 5. Tentang Pelayanan (About Us)
+
+* Paragraf singkat seperti:
+
+  > *Kami rindu setiap orang mengalami kasih Yesus dan menemukan harapan yang sejati melalui-Nya. Hati untuk Tuhan adalah gerakan digital untuk menjangkau jiwa lewat video pendek yang sederhana namun bermakna.*
+
+#### 6. Footer
+
+* Link sosial media:
+
+  * TikTok
+  * Instagram
+  * YouTube (opsional)
+  * Spotify (embed playlist)
+* Catatan: *"Made with 💖 to glorify Jesus"*
+
+---
+
+### 🔧 Teknologi & Fungsionalitas
+
+* Framework: **Next.js** (atau React biasa jika lebih cocok untuk Replit)
+* Styling: **Tailwind CSS**
+* Animasi: **Framer Motion** atau **GSAP**
+* Embed TikTok dan Instagram
+* Gunakan **Bible API** untuk ayat harian
+* Prayer Request form kirim ke **Notion** (bisa pakai Zapier atau Notion API)
+* Tidak perlu fitur newsletter
+
+---
+
+Silakan pakai prompt ini langsung ke Replit AI. Kalau nanti kamu butuh bantu generate file `.replit` atau setting file project awal, aku siap bantu lagi!
