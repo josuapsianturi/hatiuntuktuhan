@@ -48,7 +48,8 @@ export default function Home() {
               <a href="#home" className="text-gray-600 hover:text-blue-500 transition-colors duration-300 mr-10">Beranda</a>
               <a href="#scripture" className="text-gray-600 hover:text-blue-500 transition-colors duration-300 mr-10">Ayat Harian</a>
               <a href="#prayer" className="text-gray-600 hover:text-blue-500 transition-colors duration-300 mr-10">Doa</a>
-              <a href="#about" className="text-gray-600 hover:text-blue-500 transition-colors duration-300">Tentang</a>
+              <a href="#about" className="text-gray-600 hover:text-blue-500 transition-colors duration-300 mr-10">Tentang</a>
+              <a href="/kesaksian" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">Kesaksian</a>
             </div>
             
             <button className="md:hidden text-gray-600 hover:text-blue-500" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)} aria-label="Buka menu">
@@ -64,6 +65,7 @@ export default function Home() {
               <a href="#scripture" className="text-gray-600 hover:text-blue-500 w-full" onClick={() => setMobileMenuOpen(false)}>Ayat Harian</a>
               <a href="#prayer" className="text-gray-600 hover:text-blue-500 w-full" onClick={() => setMobileMenuOpen(false)}>Doa</a>
               <a href="#about" className="text-gray-600 hover:text-blue-500 w-full" onClick={() => setMobileMenuOpen(false)}>Tentang</a>
+              <a href="/kesaksian" className="text-gray-600 hover:text-purple-600 w-full" onClick={() => setMobileMenuOpen(false)}>Kesaksian</a>
             </nav>
           </div>
         )}

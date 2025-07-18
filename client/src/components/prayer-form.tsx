@@ -10,14 +10,12 @@ import { Label } from "@/components/ui/label";
 
 interface PrayerFormData {
   name: string;
-  email: string;
   message: string;
 }
 
 export default function PrayerForm() {
   const [formData, setFormData] = useState<PrayerFormData>({
     name: '',
-    email: '',
     message: ''
   });
   const [showSuccess, setShowSuccess] = useState(false);
@@ -31,7 +29,7 @@ export default function PrayerForm() {
       return response.json();
     },
     onSuccess: () => {
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', message: '' });
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 5000);
       toast({
@@ -51,7 +49,14 @@ export default function PrayerForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+    if (!formData.name.trim()) {
+      toast({
+        title: "Nama diperlukan",
+        description: "Silakan masukkan nama Anda.",
+        variant: "destructive",
+      });
+      return;
+    }
     if (!formData.message.trim()) {
       toast({
         title: "Pesan doa diperlukan",
@@ -60,7 +65,6 @@ export default function PrayerForm() {
       });
       return;
     }
-
     submitPrayerMutation.mutate(formData);
   };
 
@@ -76,7 +80,6 @@ export default function PrayerForm() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">Permohonan Doa</h2>
           <p className="text-gray-600 text-lg">Bagikan kebutuhan doa Anda dengan kami. Tim kami akan mendoakan Anda dengan sepenuh hati.</p>
         </div>
-        
         <motion.form 
           onSubmit={handleSubmit}
           className="bg-white rounded-2xl shadow-lg p-8"
@@ -90,7 +93,7 @@ export default function PrayerForm() {
             {/* Name Field */}
             <div>
               <Label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                Nama <span className="text-gray-400">(opsional)</span>
+                Nama <span className="text-red-500">*</span>
               </Label>
               <Input
                 type="text"
@@ -99,30 +102,14 @@ export default function PrayerForm() {
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Masukkan nama Anda"
+                required
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
               />
             </div>
-            
-            {/* Email Field */}
-            <div>
-              <Label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                Email <span className="text-gray-400">(opsional)</span>
-              </Label>
-              <Input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="nama@email.com"
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-              />
-            </div>
-            
             {/* Prayer Message */}
             <div>
               <Label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                Pesan Doa <span className="text-red-500">*</span>
+                Permohonan Doa <span className="text-red-500">*</span>
               </Label>
               <Textarea
                 id="message"
@@ -131,11 +118,10 @@ export default function PrayerForm() {
                 onChange={handleInputChange}
                 rows={5}
                 required
-                placeholder="Bagikan kebutuhan doa atau hal yang ingin Anda doakan..."
+                placeholder="Bagikan kebutuhan doa atau hal yang ingin di doakan..."
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
               />
             </div>
-            
             {/* Privacy Notice */}
             <div className="bg-gray-50 p-4 rounded-xl">
               <p className="text-sm text-gray-600">
@@ -143,7 +129,6 @@ export default function PrayerForm() {
                 Doa Anda akan dijaga kerahasiaannya dan hanya dibagikan dengan tim doa kami.
               </p>
             </div>
-            
             {/* Submit Button */}
             <Button
               type="submit"
@@ -157,7 +142,6 @@ export default function PrayerForm() {
             </Button>
           </div>
         </motion.form>
-        
         {/* Success Message */}
         {showSuccess && (
           <motion.div 

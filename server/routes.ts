@@ -14,9 +14,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
         Name: {
           title: {}
         },
-        Email: {
-          email: {}
-        },
         Message: {
           rich_text: {}
         },
@@ -113,7 +110,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
           console.log("📝 Creating Prayer Requests database in Notion page...");
           const newDb = await createDatabaseIfNotExists("Prayer Requests", {
             Name: { title: {} },
-            Email: { email: {} },
             Message: { rich_text: {} },
             "Created Date": { created_time: {} },
             Status: {
@@ -144,9 +140,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
                   }
                 ]
               },
-              Email: validatedData.email ? {
-                email: validatedData.email
-              } : { email: null },
               Message: {
                 rich_text: [
                   {

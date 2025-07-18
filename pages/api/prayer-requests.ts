@@ -18,7 +18,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       try {
         const newDb = await createDatabaseIfNotExists("Prayer Requests", {
           Name: { title: {} },
-          Email: { email: {} },
           Message: { rich_text: {} },
           "Created Date": { created_time: {} },
           Status: {
@@ -39,7 +38,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 { text: { content: validatedData.name || "Anonymous" } }
               ]
             },
-            Email: validatedData.email ? { email: validatedData.email } : { email: null },
             Message: {
               rich_text: [
                 { text: { content: validatedData.message } }

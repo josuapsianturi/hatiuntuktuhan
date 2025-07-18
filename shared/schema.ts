@@ -11,7 +11,6 @@ export const users = pgTable("users", {
 export const prayerRequests = pgTable("prayer_requests", {
   id: serial("id").primaryKey(),
   name: text("name"),
-  email: text("email"),
   message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });

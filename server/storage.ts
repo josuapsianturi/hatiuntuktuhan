@@ -43,7 +43,6 @@ export class MemStorage implements IStorage {
     const prayerRequest: PrayerRequest = {
       id,
       name: insertPrayerRequest.name || null,
-      email: insertPrayerRequest.email || null,
       message: insertPrayerRequest.message,
       createdAt: new Date(),
     };

@@ -39,6 +39,7 @@ export default function Footer() {
               <a href="#scripture" className="block text-gray-300 hover:text-white transition-colors duration-300">Ayat Harian</a>
               <a href="#prayer" className="block text-gray-300 hover:text-white transition-colors duration-300">Permohonan Doa</a>
               <a href="#about" className="block text-gray-300 hover:text-white transition-colors duration-300">Tentang Kami</a>
+              <a href="/kesaksian" className="block text-gray-300 hover:text-purple-300 transition-colors duration-300">Kesaksian</a>
             </div>
           </motion.div>
 
