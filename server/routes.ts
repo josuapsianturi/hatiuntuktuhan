@@ -28,7 +28,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             options: [
               { name: "New", color: "blue" },
               { name: "Praying", color: "yellow" },
-              { name: "Answered", color: "green" }
+              { name: "Prayed", color: "green" }
             ]
           }
         }
@@ -121,7 +121,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
                 options: [
                   { name: "New", color: "blue" },
                   { name: "Praying", color: "yellow" },
-                  { name: "Answered", color: "green" }
+                  { name: "Prayed", color: "green" }
                 ]
               }
             }

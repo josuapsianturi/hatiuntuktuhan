@@ -36,6 +36,7 @@ export default function HeroSection() {
             <motion.a 
               href="https://www.tiktok.com/@hatiuntuktuhan" 
               target="_blank" 
+              aria-label="Follow Hati untuk Tuhan on TikTok"
               className="group bg-gray-900 hover:bg-gray-800 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3"
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
@@ -48,6 +49,7 @@ export default function HeroSection() {
             <motion.a 
               href="https://www.instagram.com/hatiuntuktuhan/" 
               target="_blank" 
+              aria-label="Follow Hati untuk Tuhan on Instagram"
               className="group bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3"
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
@@ -61,6 +63,7 @@ export default function HeroSection() {
               href="https://whatsapp.com/channel/0029Vb5nv4b89indhGAwaY0s" 
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Join Hati untuk Tuhan WhatsApp Channel"
               className="group bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3"
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
@@ -74,6 +77,7 @@ export default function HeroSection() {
               href="https://open.spotify.com/playlist/3bZfjBuLVHw0aC7UPAsUyg?si=xX-fFWyOSxqnCF7Kyx2sIQ" 
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Listen to Hati untuk Tuhan Spotify Playlist"
               className="group bg-green-400 hover:bg-green-500 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3"
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}

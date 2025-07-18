@@ -29,7 +29,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-orange-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-green-50 to-purple-50">
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/50">
         <nav className="container mx-auto px-4 py-4">

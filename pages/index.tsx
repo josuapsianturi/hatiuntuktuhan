@@ -31,13 +31,16 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-orange-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-green-50 to-purple-50 overflow-x-hidden">
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/50">
         <nav className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between pr-2">
             <div className="flex items-center space-x-3">
-              <img src="/logo.png" alt="Logo Hati untuk Tuhan" className="w-12 h-12 rounded-full object-cover border-2 border-white shadow" />
+              <picture>
+                <source srcSet="/logo.webp" type="image/webp" />
+                <img src="/logo.png" alt="Logo Hati untuk Tuhan" width="48" height="48" className="w-12 h-12 rounded-full object-cover border-2 border-white shadow" />
+              </picture>
               <span className="text-xl font-bold text-slate-800">Hati untuk Tuhan</span>
             </div>
             

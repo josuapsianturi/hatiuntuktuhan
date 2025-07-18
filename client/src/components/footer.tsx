@@ -14,7 +14,10 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
-              <img src="/logo.png" alt="Logo Hati untuk Tuhan" className="w-10 h-10 rounded-full object-cover border-2 border-white shadow" />
+              <picture>
+                <source srcSet="/logo.webp" type="image/webp" />
+                <img src="/logo.png" alt="Logo Hati untuk Tuhan" width="40" height="40" className="w-10 h-10 rounded-full object-cover border-2 border-white shadow" />
+              </picture>
               <span className="text-xl font-bold">Hati untuk Tuhan</span>
             </div>
             <p className="text-gray-300 leading-relaxed">
@@ -52,6 +55,7 @@ export default function Footer() {
               <motion.a
                 href="https://www.tiktok.com/@hatiuntuktuhan"
                 target="_blank"
+                aria-label="TikTok Hati untuk Tuhan"
                 className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300"
                 whileHover={{ y: -2 }}
               >
@@ -60,6 +64,7 @@ export default function Footer() {
               <motion.a
                 href="https://www.instagram.com/hatiuntuktuhan/"
                 target="_blank"
+                aria-label="Instagram Hati untuk Tuhan"
                 className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center transition-all duration-300"
                 whileHover={{ y: -2 }}
               >
@@ -68,6 +73,7 @@ export default function Footer() {
               <motion.a
                 href="https://whatsapp.com/channel/0029Vb5nv4b89indhGAwaY0s"
                 target="_blank"
+                aria-label="WhatsApp Hati untuk Tuhan"
                 className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-all duration-300"
                 whileHover={{ y: -2 }}
               >
@@ -76,6 +82,7 @@ export default function Footer() {
               <motion.a
                 href="https://open.spotify.com/playlist/3bZfjBuLVHw0aC7UPAsUyg?si=xX-fFWyOSxqnCF7Kyx2sIQ"
                 target="_blank"
+                aria-label="Spotify Playlist Hati untuk Tuhan"
                 className="w-10 h-10 bg-green-400 hover:bg-green-500 rounded-full flex items-center justify-center transition-all duration-300"
                 whileHover={{ y: -2 }}
               >
@@ -97,7 +104,7 @@ export default function Footer() {
                 <span className="text-xs">Dengarkan di Spotify</span>
               </a>
               <div className="rounded-lg overflow-hidden">
-                <iframe style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/playlist/3bZfjBuLVHw0aC7UPAsUyg?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe title="Spotify Playlist Rohani" style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/playlist/3bZfjBuLVHw0aC7UPAsUyg?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
               </div>
             </div>
           </motion.div>
