@@ -22,12 +22,12 @@ export default function HeroSection() {
           
           {/* Hero Title */}
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight">
-            Jangkau Jiwa, Nyatakan Kasih-Nya
+            Tuhan Yesus Cinta Kamu
           </h1>
           
           {/* Hero Subtitle */}
           <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Video pendek tentang Injil & Yesus Kristus yang menginspirasi dan membangun iman. Bergabunglah dengan komunitas rohani kami.
+            Video pendek tentang Tuhan Yesus
           </p>
           
           {/* CTA Buttons */}
@@ -69,7 +69,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.95 }}
             >
               <i className="fab fa-whatsapp text-xl group-hover:scale-110 transition-transform duration-300"></i>
-              <span>Join WhatsApp</span>
+              <span>Join WhatsApp Channel</span>
             </motion.a>
             
             {/* Spotify Button */}
